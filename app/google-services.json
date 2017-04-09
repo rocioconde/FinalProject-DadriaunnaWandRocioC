@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1041280763287",
+    "firebase_url": "https://finalproject-dadriaunnarocio.firebaseio.com",
+    "project_id": "finalproject-dadriaunnarocio",
+    "storage_bucket": "finalproject-dadriaunnarocio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041280763287:android:b3895d67e8f6a64f",
+        "android_client_info": {
+          "package_name": "com.example.android.finalproject_dadriaunnarocio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041280763287-jamnhulkb0qlirbmt0qokm5gh3eb3s75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgPXZDFw94I-qdqZqvoPhXkeSiZQN71-E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
