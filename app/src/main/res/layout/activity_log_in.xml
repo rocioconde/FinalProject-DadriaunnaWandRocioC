@@ -4,8 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context="com.example.android.finalproject_dadriaunnarocio.LogInActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My SchoolMenu"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log in or create an account"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
     <EditText
         android:id="@+id/edit_text_email"
