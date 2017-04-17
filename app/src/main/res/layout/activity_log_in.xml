@@ -38,21 +38,27 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/log_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:onClick="logIn"
+            android:layout_marginBottom="24dp"
             android:text="Log In" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/log_in"
+            android:layout_centerHorizontal="true"
             android:onClick="SignUp"
-            android:text="Sign Up" />
-    </LinearLayout>
+
+            android:text="Create an account" />
+    </RelativeLayout>
 </LinearLayout>
