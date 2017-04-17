@@ -16,20 +16,22 @@
         android:layout_gravity="center_horizontal"
         android:paddingBottom="4dp" />
 
-    <TextView
-        android:id="@+id/display_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="No data uploaded"
-        android:textSize="18sp" />
-
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:hint="Username" />
+        android:hint="Full name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email address" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter a password" />
 
     <EditText
         android:id="@+id/user_age"
@@ -46,24 +48,45 @@
         android:layout_weight="0"
         android:hint="Favorite Food" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="School name" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vegetarian" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do you qualify for Reduced Lunch?"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="50%" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="100%" />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="sendSomething"
-            android:text="Send" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:onClick="signOut"
-            android:text="Sign Out" />
+            android:layout_centerHorizontal="true"
+            android:onClick="signUp"
+            android:text="Sign Up" />
     </RelativeLayout>
 
 </LinearLayout>
