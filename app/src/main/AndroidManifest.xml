@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".LogInActivity" />
         <activity android:name=".StudentProfileActivity" />
-        <activity android:name=".MealOptions"></activity>
+        <activity android:name=".MealOptions" />
+        <activity android:name=".StudentMenu"></activity>
     </application>
 
 </manifest>

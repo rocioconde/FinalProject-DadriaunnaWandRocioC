@@ -58,7 +58,7 @@
             android:layout_below="@id/log_in"
             android:layout_centerHorizontal="true"
             android:onClick="SignUp"
-
             android:text="Create an account" />
+
     </RelativeLayout>
 </LinearLayout>

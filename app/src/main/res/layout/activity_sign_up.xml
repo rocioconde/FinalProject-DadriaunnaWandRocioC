@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.example.android.finalproject_dadriaunnarocio.MainActivity">
+    tools:context="com.example.android.finalproject_dadriaunnarocio.SignUpActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,14 +24,24 @@
         android:hint="Full name" />
 
     <EditText
+        android:id="@+id/student_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email address" />
 
     <EditText
+        android:id="@+id/student_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter a password" />
+
+    <EditText
+        android:id="@+id/user_grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:hint="Grade"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/user_age"
@@ -49,11 +59,13 @@
         android:hint="Favorite Food" />
 
     <EditText
+        android:id="@+id/school"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="School name" />
 
     <CheckBox
+        android:id="@+id/is_vegetarian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vegetarian" />
@@ -65,11 +77,13 @@
         android:textSize="18sp" />
 
     <CheckBox
+        android:id="@+id/reduced_lunch_50"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="50%" />
 
     <CheckBox
+        android:id="@+id/reduced_lunch_100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="100%" />
@@ -79,7 +93,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-
 
         <Button
             android:layout_width="wrap_content"

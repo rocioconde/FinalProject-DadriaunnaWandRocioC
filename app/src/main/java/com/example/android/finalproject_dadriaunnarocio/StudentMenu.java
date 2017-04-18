@@ -3,12 +3,11 @@ package com.example.android.finalproject_dadriaunnarocio;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class StudentProfileActivity extends AppCompatActivity {
-
+public class StudentMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_profile);
+        setContentView(R.layout.activity_student_menu);
     }
 }

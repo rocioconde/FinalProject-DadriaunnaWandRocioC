@@ -65,7 +65,7 @@
                 android:id="@+id/school_name"
                 android:layout_toRightOf="@+id/student_photo"
                 android:layout_below="@+id/age_grade"
-                android:text="Excellence Girls" />
+                android:text="Excellence Girls School" />
 
             <TextView
                 android:layout_width="wrap_content"
