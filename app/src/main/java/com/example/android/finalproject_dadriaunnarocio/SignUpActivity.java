@@ -61,36 +61,36 @@ public class SignUpActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
 
-                    userRef = database.getReference(user.getUid());
-                    userRef.addChildEventListener(new ChildEventListener() {
-                        @Override
-                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                            student.add(dataSnapshot.getValue(Student.class));
+                userRef = database.getReference(user.getUid());
+                userRef.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                        student.add(dataSnapshot.getValue(Student.class));
 
 
-                        }
+                    }
 
-                        @Override
-                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                            Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " has changed", Toast.LENGTH_SHORT).show();
-                        }
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                        Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " has changed", Toast.LENGTH_SHORT).show();
+                    }
 
-                        @Override
-                        public void onChildRemoved(DataSnapshot dataSnapshot) {
-                            Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " was removed", Toast.LENGTH_SHORT).show();
-                        }
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+                        Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " was removed", Toast.LENGTH_SHORT).show();
+                    }
 
-                        @Override
-                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                        }
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                    }
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                        }
-                    });
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
 
-                }
             }
+        };
 
 
     }

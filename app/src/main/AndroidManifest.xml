@@ -19,7 +19,7 @@
         <activity android:name=".LogInActivity" />
         <activity android:name=".StudentProfileActivity" />
         <activity android:name=".MealOptions" />
-        <activity android:name=".StudentMenu"></activity>
+        <activity android:name=".StudentMenu" />
     </application>
 
 </manifest>

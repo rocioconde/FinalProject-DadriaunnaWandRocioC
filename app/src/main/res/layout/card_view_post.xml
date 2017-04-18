@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Today's mashed sweet potatoes were delicious!"
             android:textSize="18sp"
-            android:textColor="black" />
+            android:textColor="#000000" />
 
 
     </LinearLayout>
