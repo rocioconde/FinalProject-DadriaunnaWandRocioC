@@ -1,18 +1,14 @@
 package com.example.android.finalproject_dadriaunnarocio;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -55,42 +51,44 @@ public class SignUpActivity extends AppCompatActivity {
         reducedLunch50 = (CheckBox) findViewById(R.id.reduced_lunch_50);
         reducedLunch100 = (CheckBox) findViewById(R.id.reduced_lunch_100);
 
-
-        authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-
-                userRef = database.getReference(user.getUid());
-                userRef.addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        student.add(dataSnapshot.getValue(Student.class));
+        Intent intent = getIntent();
 
 
-                    }
-
-                    @Override
-                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                        Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " has changed", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onChildRemoved(DataSnapshot dataSnapshot) {
-                        Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " was removed", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
-
-            }
-        };
+//        authListener = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser user = firebaseAuth.getCurrentUser();
+//
+//                userRef = database.getReference(user.getUid());
+//                userRef.addChildEventListener(new ChildEventListener() {
+//                    @Override
+//                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//                        student.add(dataSnapshot.getValue(Student.class));
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//                        Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " has changed", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+//                        Toast.makeText(SignUpActivity.this, dataSnapshot.getValue(SignUpActivity.class) + " was removed", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//                    }
+//                });
+//
+//            }
+//        };
 
 
     }

@@ -1,16 +1,18 @@
 package com.example.android.finalproject_dadriaunnarocio;
 
+import java.io.Serializable;
+
 /**
  * Created by ccteuser on 4/9/17.
  */
 
-public class Meal {
+public class Meal implements Serializable {
 
-    private String description;
-    private double price;
-    private int calories;
-    private boolean isVegetarian;
-    private int photoId;
+    public String description;
+    public double price;
+    public int calories;
+    public boolean isVegetarian;
+    public int photoId;
 
     public Meal(String description, double price, int calories, boolean isVegetarian, int photoId) {
         this.description = description;

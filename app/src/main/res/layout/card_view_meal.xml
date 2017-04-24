@@ -24,7 +24,7 @@
             android:layout_toRightOf="@+id/checkbox"
             android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
-            tools:src="@drawable/cheeseburger" />
+            tools:src="@drawable/chickenfinger" />
 
         <TextView
             android:id="@+id/meal_description"
@@ -33,7 +33,7 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/meal_photo"
             android:textSize="20sp"
-            tools:text="Cheeseburger and Fries"
+            tools:text="Baked chicken fingers, white rice, and caesar salad"
             android:textStyle="bold"
 
             />
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/meal_description"
             android:layout_toRightOf="@+id/meal_photo"
-            tools:text="$ 8.50"
+            tools:text="$ 5.00"
             android:textSize="18sp" />
 
         <TextView
@@ -53,16 +53,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/meal_price"
             android:layout_toRightOf="@+id/meal_photo"
-            tools:text="750 calories"
+            tools:text="700 calories"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/vegetaria"
+            android:id="@+id/is_vegetarian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/meal_calories"
             android:layout_toRightOf="@+id/meal_photo"
-            tools:text="Vegetarian: true"
+            tools:text="Vegetarian: false"
             android:textSize="18sp" />
 
 
