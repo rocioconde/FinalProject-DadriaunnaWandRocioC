@@ -1,6 +1,23 @@
 <resources>
-    <string name="app_name">School Menu</string>
+    <string name="app_name">SchoolMenu</string>
     <string name="name">Full name</string>
     <string name="email_address">Email address</string>
+    <string name="log_in_or_create">Log in or create an account</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="my_menu">My School Menu</string>
+    <string name="my_profile">My Profile</string>
+    <string name="grade">Grade</string>
+    <string name="age">Age</string>
+    <string name="fav_food">Favorite Food</string>
+    <string name="school_name">School Name</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="reduced_lunch">Do you qualify for reduced lunch?</string>
+    <string name="meal_options">Meal Options</string>
+    <string name="preview_menu">Preview Menu</string>
+    <string name="go_back">Go Back</string>
+    <string name="confirm_menu">Confirm menu and send email</string>
+
 
 </resources>

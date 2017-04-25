@@ -1,5 +1,23 @@
 <resources>
-    <string name="app_name">Menu Escolar</string>
+    <string name="app_name">MenúEscolar</string>
     <string name="name">Nombre completo</string>
     <string name="email_address">Correo electrónico</string>
+    <string name="log_in_or_create">Inicia sesión o crea una cuenta</string>
+    <string name="password">Contraseña</string>
+    <string name="log_in">Inicia sesión</string>
+    <string name="create_account">Crea una cuenta</string>
+    <string name="my_menu">Mi Menú Escolar</string>
+    <string name="my_profile">Mi Perfil</string>
+    <string name="grade">Grado</string>
+    <string name="age">Edad</string>
+    <string name="fav_food">Comida Favorita</string>
+    <string name="school_name">Nombre del Colegio</string>
+    <string name="vegetarian">Vegetariano</string>
+    <string name="reduced_lunch">¿Calificas para almuerzo reducido?</string>
+    <string name="meal_options">Opciones de Comida</string>
+    <string name="preview_menu">Ver menú</string>
+    <string name="go_back">Volver</string>
+    <string name="confirm_menu">Confirmar menú y mandar email</string>
+
+
 </resources>

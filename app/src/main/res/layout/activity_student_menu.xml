@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Menu"
+        android:text="@string/my_menu"
         android:textSize="24sp"
         android:gravity="center" />
 
@@ -28,14 +28,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go Back"
+            android:text="@string/go_back"
             android:onClick="goBack"
             android:layout_alignParentLeft="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Confirm Menu and Send Email"
+            android:text="@string/confirm_menu"
             android:layout_alignParentRight="true"
 
             />
