@@ -30,7 +30,7 @@ public class MealOptions extends AppCompatActivity {
         meals = new ArrayList<>();
         meals.add(new Meal("Baked chicken fingers, white rice, and caesar salad", 5, 700, false, R.drawable.chickenfinger));
         meals.add(new Meal("Pork chops, mashed potatoes, and roasted carrots", 5, 750, false, R.drawable.porkchops));
-        meals.add(new Meal("Redl lentils stew, baked potatoes, and banana", 4.30, 560, true, R.drawable.redlentils));
+        meals.add(new Meal("Red lentils stew, baked potatoes, and banana", 4.30, 560, true, R.drawable.redlentils));
         meals.add(new Meal("Veggie burger, corn on the cob, and fruit salad", 4.90, 690, true, R.drawable.veggieburger));
         meals.add(new Meal("Cheees pizza, caesar salad, and fruit salad", 4.80, 690, true, R.drawable.cheespizza));
         meals.add(new Meal("Tofu chicken nuggets, macaroni and cheese, and watermelon slices", 4.50, 600, true, R.drawable.tofu));

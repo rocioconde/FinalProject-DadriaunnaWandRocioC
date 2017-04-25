@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Menu Escolar</string>
+    <string name="name">Nombre completo</string>
+    <string name="email_address">Correo electrónico</string>
+</resources>

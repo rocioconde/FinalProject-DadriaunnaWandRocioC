@@ -24,7 +24,7 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
 
     public MealViewHolder(View itemView, Context context) {
         super(itemView);
-        cardView = (CardView) itemView.findViewById(R.id.card_view);
+        cardView = (CardView) itemView.findViewById(R.id.card_view_meal);
         mealDescriptionView = (TextView) itemView.findViewById(R.id.meal_description);
         mealPriceView = (TextView) itemView.findViewById(R.id.meal_price);
         mealCaloriesView = (TextView) itemView.findViewById(R.id.meal_calories);
