@@ -52,7 +52,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         studentGrade.setText(String.valueOf("/Grade " + student.grade));
         studentSchool.setText(student.school);
         studentFavFood.setText("Favorite food: " + student.favFood);
-        isVegetarian.setText(String.valueOf("Is vegetarian? " + student.isVegetarian));
+        isVegetarian.setText(String.valueOf("Vegetarian: " + student.isVegetarian));
 
 
         authListener = new FirebaseAuth.AuthStateListener() {

@@ -17,11 +17,11 @@
         android:id="@+id/post_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write post" />
+        android:hint="@string/write_post" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Post to Profile"
+        android:text="@string/add_post_to_profile"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
