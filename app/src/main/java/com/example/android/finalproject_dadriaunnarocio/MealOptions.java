@@ -1,9 +1,11 @@
 package com.example.android.finalproject_dadriaunnarocio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,5 +43,9 @@ public class MealOptions extends AppCompatActivity {
     }
 
 
+    public void previewMenu(View view) {
 
+        Intent intentPreviewMenu = new Intent(this, StudentMenu.class);
+        startActivity(intentPreviewMenu);
+    }
 }

@@ -9,12 +9,12 @@
 
 
     <ImageView
-        android:id="@+id/post_image"
+        android:id="@+id/post_photo"
         android:layout_width="match_parent"
         android:layout_height="350dp" />
 
     <EditText
-        android:id="@+id/post_text"
+        android:id="@+id/post_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/write_post" />
@@ -23,5 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_post_to_profile"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="addPostToProfile" />
 </LinearLayout>

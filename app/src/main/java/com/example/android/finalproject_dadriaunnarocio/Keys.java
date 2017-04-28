@@ -8,4 +8,5 @@ public interface Keys {
 
     String MEALS = "meals";
     String STUDENT = "student";
+    String POST = "post";
 }

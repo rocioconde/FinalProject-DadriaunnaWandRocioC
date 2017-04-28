@@ -28,15 +28,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/go_back"
-            android:onClick="goBack"
-            android:layout_alignParentLeft="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/confirm_menu"
-            android:layout_alignParentRight="true"
+            android:onClick="confirmMenu"
+            android:layout_centerHorizontal="true"
 
             />
 

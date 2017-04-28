@@ -38,7 +38,6 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
         mealPriceView.setText(String.valueOf(meal.price));
         mealCaloriesView.setText(String.valueOf(meal.calories));
         mealVegetarianView.setText(String.valueOf(meal.isVegetarian));
-
         mealPhotoView.setImageResource(meal.photoId);
 
 
