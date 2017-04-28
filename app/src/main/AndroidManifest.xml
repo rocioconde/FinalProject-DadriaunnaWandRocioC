@@ -10,9 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SignUpActivity" />
-
         <activity android:name=".LogInActivity" />
-
         <activity android:name=".StudentProfileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +20,7 @@
         </activity>
         <activity android:name=".MealOptions" />
         <activity android:name=".StudentMenu" />
+        <activity android:name=".AddNewPost"></activity>
     </application>
 
 </manifest>

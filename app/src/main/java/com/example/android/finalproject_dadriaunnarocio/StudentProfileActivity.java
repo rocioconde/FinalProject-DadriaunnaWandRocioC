@@ -29,8 +29,6 @@ public class StudentProfileActivity extends AppCompatActivity {
     private TextView isVegetarian;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +48,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         intent.getSerializableExtra(Keys.STUDENT);
         studentPhoto.setImageResource(student.photoId);
         studentName.setText(student.fullName);
-        studentAge.setText(String.valueOf(student.age + "years old "));
+        studentAge.setText(String.valueOf(student.age + " years old "));
         studentGrade.setText(String.valueOf("/Grade " + student.grade));
         studentSchool.setText(student.school);
         studentFavFood.setText("Favorite food: " + student.favFood);
@@ -107,5 +105,8 @@ public class StudentProfileActivity extends AppCompatActivity {
     }
 
     public void addNewPost(View view) {
+
+        Intent intentPosts = new Intent(this, AddNewPost.class);
+        startActivity(intentPosts);
     }
 }

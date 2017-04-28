@@ -18,6 +18,10 @@
     <string name="preview_menu">Ver menú</string>
     <string name="go_back">Volver</string>
     <string name="confirm_menu">Confirmar menú y mandar email</string>
+    <string name="add_post_to_profile">Agregar publicación al perfil</string>
+    <string name="write_post">Escribir publicación</string>
+    <string name="select_meals">Seleccionar comidas</string>
+    <string name="add_new_post">Agregar nueva publicación</string>
 
 
 </resources>
