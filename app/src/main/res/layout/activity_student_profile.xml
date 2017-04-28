@@ -75,6 +75,14 @@
                 android:layout_below="@+id/school_name"
                 android:text="Favorite food: Sushi and Seafood" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/is_vegetarian"
+                android:text="Is vegetarian? true"
+                android:layout_toRightOf="@+id/student_photo"
+                android:layout_below="@+id/fav_food" />
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
@@ -88,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Select meals"
+            android:onClick="selectMeals"
             android:layout_weight="1" />
 
 
@@ -96,6 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Add New Post"
+            android:onClick="addNewPost"
             android:layout_weight="1" />
 
     </LinearLayout>

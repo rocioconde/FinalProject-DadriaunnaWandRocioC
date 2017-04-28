@@ -1,10 +1,12 @@
 package com.example.android.finalproject_dadriaunnarocio;
 
+import java.io.Serializable;
+
 /**
  * Created by ccteuser on 4/11/17.
  */
 
-public class Student {
+public class Student implements Serializable {
     public String fullName;
     public int grade;
     public int age;
@@ -21,6 +23,9 @@ public class Student {
         this.school = school;
         this.photoId = photoId;
         this.isVegetarian = isVegetarian;
+    }
+
+    public Student() {
     }
 
     public String getFullName() {

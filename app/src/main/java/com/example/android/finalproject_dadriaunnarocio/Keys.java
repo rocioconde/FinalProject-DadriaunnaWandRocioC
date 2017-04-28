@@ -7,4 +7,5 @@ package com.example.android.finalproject_dadriaunnarocio;
 public interface Keys {
 
     String MEALS = "meals";
+    String STUDENT = "student";
 }

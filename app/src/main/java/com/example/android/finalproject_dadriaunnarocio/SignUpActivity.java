@@ -1,6 +1,5 @@
 package com.example.android.finalproject_dadriaunnarocio;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,18 +39,16 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        studentName = (EditText) findViewById(R.id.username);
-        studentEmail = (EditText) findViewById(R.id.student_email);
-        studentPassword = (EditText) findViewById(R.id.student_password);
-        studentGrade = (EditText) findViewById(R.id.user_grade);
-        studentAge = (EditText) findViewById(R.id.user_age);
-        studentSchool = (EditText) findViewById(R.id.school);
-        isVegetarian = (CheckBox) findViewById(R.id.is_vegetarian);
-        favFood = (EditText) findViewById(R.id.favorite_food);
-        reducedLunch50 = (CheckBox) findViewById(R.id.reduced_lunch_50);
-        reducedLunch100 = (CheckBox) findViewById(R.id.reduced_lunch_100);
-
-        Intent intent = getIntent();
+//        studentName = (EditText) findViewById(R.id.username);
+//        studentEmail = (EditText) findViewById(R.id.student_email);
+//        studentPassword = (EditText) findViewById(R.id.student_password);
+//        studentGrade = (EditText) findViewById(R.id.user_grade);
+//        studentAge = (EditText) findViewById(R.id.user_age);
+//        studentSchool = (EditText) findViewById(R.id.school);
+//        isVegetarian = (CheckBox) findViewById(R.id.is_vegetarian);
+//        favFood = (EditText) findViewById(R.id.favorite_food);
+//        reducedLunch50 = (CheckBox) findViewById(R.id.reduced_lunch_50);
+//        reducedLunch100 = (CheckBox) findViewById(R.id.reduced_lunch_100);
 
 
 //        authListener = new FirebaseAuth.AuthStateListener() {
@@ -93,7 +90,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -130,13 +126,6 @@ public class SignUpActivity extends AppCompatActivity {
         userRef.push().setValue(doesHaveReducedLunch100);
     }
 
-//    private void displayUserInfo() {
-//        String text = "";
-//        for (Student s : student)
-//            text += s + "\n";
-//        displayText.setText(text);
-//
-//    }
 
 //    public void signOut(View view) {
 //        auth.signOut();
