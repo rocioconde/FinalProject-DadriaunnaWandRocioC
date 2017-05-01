@@ -53,7 +53,7 @@ public class Student implements Serializable {
     }
 
     public String getFavFood() {
-        return favFood;
+        return "Favorite food: " + favFood;
     }
 
     public void setFavFood(String favFood) {
@@ -61,7 +61,7 @@ public class Student implements Serializable {
     }
 
     public String getSchool() {
-        return school;
+        return school + " school";
     }
 
     public void setSchool(String school) {
@@ -83,4 +83,14 @@ public class Student implements Serializable {
     public void setVegetarian(boolean vegetarian) {
         isVegetarian = vegetarian;
     }
+
+    @Override
+    public String toString() {
+        return fullName + "\nGrade " + grade + "/" + age + " years old" +
+                "\nFavorite Food= " + favFood +
+                "\n" + school + " school" +
+                "\nVegetarian= " + isVegetarian;
+    }
 }
+
+

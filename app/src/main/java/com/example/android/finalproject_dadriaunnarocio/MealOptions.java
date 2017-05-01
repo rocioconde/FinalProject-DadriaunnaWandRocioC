@@ -6,15 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CheckBox;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MealOptions extends AppCompatActivity {
 
-    private List<Meal> meals;
+    private ArrayList<Meal> meals;
+    private ArrayList<Meal> veggieMeals;
+    private ArrayList<Meal> selectedMeals;
     private MealsAdapter mealAdapter;
+    private CheckBox mealCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class MealOptions extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mealAdapter = new MealsAdapter(meals, this);
         recyclerView.setAdapter(mealAdapter);
+        mealCheckbox = (CheckBox) findViewById(R.id.checkbox);
     }
 
     private void initialData() {
@@ -40,10 +44,22 @@ public class MealOptions extends AppCompatActivity {
         meals.add(new Meal("Pasta with meatballs and corn on the cob", 5, 680, false, R.drawable.meatballs));
         meals.add(new Meal("Cheeseburger, roasted potatoes, and apple", 5, 680, false, R.drawable.cheeseburger));
         meals.add(new Meal("Pepperoni pizza, caprese salad, and watermelon slices", 5, 700, false, R.drawable.pepperoni));
+
     }
 
 
     public void previewMenu(View view) {
+
+
+        for (Meal mealOption : meals) {
+            if (mealCheckbox.isChecked()) {
+
+                selectedMeals.add(mealOption);
+            }
+            if (mealOption.isVegetarian())
+
+                veggieMeals.add(mealOption);
+        }
 
         Intent intentPreviewMenu = new Intent(this, StudentMenu.class);
         startActivity(intentPreviewMenu);

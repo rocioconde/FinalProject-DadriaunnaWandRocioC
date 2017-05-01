@@ -12,11 +12,16 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class StudentProfileActivity extends AppCompatActivity {
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference studentRef = database.getReference("student");
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener authListener;
 
@@ -29,6 +34,7 @@ public class StudentProfileActivity extends AppCompatActivity {
     private TextView isVegetarian;
 
 
+    //new information added
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,17 +48,55 @@ public class StudentProfileActivity extends AppCompatActivity {
         studentFavFood = (TextView) findViewById(R.id.fav_food);
         isVegetarian = (TextView) findViewById(R.id.is_vegetarian);
 
+        studentRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Student student = dataSnapshot.getValue(Student.class);
+                studentName.setText(student.getFullName());
+                studentAge.setText(String.valueOf(student.getAge()) + " years old/ ");
+                studentGrade.setText(String.valueOf("Grade " + student.getGrade()));
+                studentSchool.setText(student.getSchool());
+                studentFavFood.setText(student.getFavFood());
+                if (student.isVegetarian()) {
+                    isVegetarian.setText("Vegetarian: true");
+                } else {
+                    isVegetarian.setText("Vegetarian: false");
+                }
 
-        Student student = new Student("Rocio Conde", 12, 17, "arepas", "TC", R.drawable.girl, false);
-        Intent intent = new Intent();
-        intent.getSerializableExtra(Keys.STUDENT);
-        studentPhoto.setImageResource(student.photoId);
-        studentName.setText(student.fullName);
-        studentAge.setText(String.valueOf(student.age + " years old "));
-        studentGrade.setText(String.valueOf("/Grade " + student.grade));
-        studentSchool.setText(student.school);
-        studentFavFood.setText("Favorite food: " + student.favFood);
-        isVegetarian.setText(String.valueOf("Vegetarian: " + student.isVegetarian));
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+//        Student student = new Student("Rocio Conde", 12, 17, "arepas", "TC", R.drawable.girl, false);
+//        Intent intent = new Intent();
+//        intent.getSerializableExtra(Keys.STUDENT);
+//        studentPhoto.setImageResource(student.photoId);
+//        studentName.setText(student.fullName);
+//        studentAge.setText(String.valueOf(student.age + " years old "));
+//        studentGrade.setText(String.valueOf("/Grade " + student.grade));
+//        studentSchool.setText(student.school);
+//        studentFavFood.setText("Favorite food: " + student.favFood);
+//        isVegetarian.setText(String.valueOf("Vegetarian: " + student.isVegetarian));
 
 
         authListener = new FirebaseAuth.AuthStateListener() {
@@ -96,7 +140,6 @@ public class StudentProfileActivity extends AppCompatActivity {
 
     }
 
-
     public void selectMeals(View view) {
 
         Intent intentMeals = new Intent(this, MealOptions.class);
@@ -109,4 +152,5 @@ public class StudentProfileActivity extends AppCompatActivity {
         Intent intentPosts = new Intent(this, AddNewPost.class);
         startActivity(intentPosts);
     }
+
 }
