@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
     private TextView mealCaloriesView;
     private TextView mealVegetarianView;
     private ImageView mealPhotoView;
+    private CheckBox mealCheckbox;
     private Context context;
 
     public MealViewHolder(View itemView, Context context) {
@@ -30,6 +33,7 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
         mealCaloriesView = (TextView) itemView.findViewById(R.id.meal_calories);
         mealVegetarianView = (TextView) itemView.findViewById(R.id.is_vegetarian);
         mealPhotoView = (ImageView) itemView.findViewById(R.id.meal_photo);
+        mealCheckbox = (CheckBox) itemView.findViewById(R.id.meal_checkbox);
         this.context = context;
     }
 
@@ -39,6 +43,13 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
         mealCaloriesView.setText(String.valueOf(meal.calories));
         mealVegetarianView.setText(String.valueOf(meal.isVegetarian));
         mealPhotoView.setImageResource(meal.photoId);
+        mealCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                meal.selected = isChecked;
+            }
+        });
+
 
 
         cardView.setOnClickListener(new View.OnClickListener() {

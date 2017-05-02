@@ -56,7 +56,7 @@ public class StudentProfileActivity extends AppCompatActivity {
                 studentAge.setText(String.valueOf(student.getAge()) + " years old/ ");
                 studentGrade.setText(String.valueOf("Grade " + student.getGrade()));
                 studentSchool.setText(student.getSchool());
-                studentFavFood.setText(student.getFavFood());
+                studentFavFood.setText("Favorite food: " + student.getFavFood());
                 if (student.isVegetarian()) {
                     isVegetarian.setText("Vegetarian: true");
                 } else {

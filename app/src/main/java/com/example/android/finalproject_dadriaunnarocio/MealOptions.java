@@ -21,7 +21,6 @@ public class MealOptions extends AppCompatActivity {
 
     private ArrayList<Meal> meals;
     private ArrayList<Meal> veggieMeals = new ArrayList<>();
-    private ArrayList<Meal> selectedMeals;
     private MealsAdapter mealAdapter;
     private CheckBox mealCheckbox;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -109,15 +108,26 @@ public class MealOptions extends AppCompatActivity {
 
     public void previewMenu(View view) {
 
-        for (Meal mealOption : meals) {
-            if (mealCheckbox.isChecked()) {
+        ArrayList<Meal> selectedMeals = new ArrayList<>();
+        if (student.isVegetarian()) {
+            for (Meal mealOption : veggieMeals) {
 
-                selectedMeals.add(mealOption);
+
+                if (mealOption.isSelected()) {
+                    selectedMeals.add(mealOption);
+                }
             }
-
+        } else {
+            for (Meal mealOption : meals) {
+                if (mealOption.isSelected()) {
+                    selectedMeals.add(mealOption);
+                }
+            }
         }
 
-        Intent intentPreviewMenu = new Intent(this, StudentMenu.class);
+
+        Intent intentPreviewMenu = new Intent(MealOptions.this, StudentMenu.class);
+        intentPreviewMenu.putExtra("selectedMeals", selectedMeals);
         startActivity(intentPreviewMenu);
     }
 }

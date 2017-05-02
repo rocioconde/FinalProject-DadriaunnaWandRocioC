@@ -13,6 +13,7 @@ public class Meal implements Serializable {
     public int calories;
     public boolean isVegetarian;
     public int photoId;
+    public boolean selected;
 
     public Meal(String description, double price, int calories, boolean isVegetarian, int photoId) {
         this.description = description;
@@ -48,6 +49,10 @@ public class Meal implements Serializable {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public boolean isSelected() {
+        return selected;
     }
 
     public boolean isVegetarian() {

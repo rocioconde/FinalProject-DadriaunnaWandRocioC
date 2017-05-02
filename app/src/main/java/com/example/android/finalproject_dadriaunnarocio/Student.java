@@ -53,7 +53,7 @@ public class Student implements Serializable {
     }
 
     public String getFavFood() {
-        return "Favorite food: " + favFood;
+        return favFood;
     }
 
     public void setFavFood(String favFood) {
