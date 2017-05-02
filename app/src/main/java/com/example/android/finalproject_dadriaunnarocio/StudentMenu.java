@@ -17,6 +17,7 @@ public class StudentMenu extends AppCompatActivity {
 
         Intent intent = getIntent();
         ArrayList<Meal> selectedMeals = (ArrayList<Meal>) intent.getSerializableExtra("selectedMeals");
+        selectedMeals.toString();
     }
 
     public void confirmMenu(View view) {

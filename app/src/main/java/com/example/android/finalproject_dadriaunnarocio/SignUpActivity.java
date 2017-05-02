@@ -80,6 +80,29 @@ public class SignUpActivity extends AppCompatActivity {
         isVegetarian1 = isVegetarian.isChecked();
         String favFood1 = favFood.getText().toString();
 
+//        Student s = new Student(studentFullName, studentGrade2, studentAge2, favFood1, studentSchool1, R.drawable.girl, isVegetarian1);
+        Intent intent = new Intent(this, StudentProfileActivity.class);
+        startActivity(intent);
+
+        studentRef.push().setValue(new Student(studentFullName, studentGrade2, studentAge2, favFood1, studentSchool1, R.drawable.girl, isVegetarian1));
+//        userRef.push().setValue(studentName.getText().toString());
+//        userRef.push().setValue(studentGrade.getText().toString());
+//        userRef.push().setValue(studentAge.getText().toString());
+//        userRef.push().setValue(studentSchool.getText().toString());
+//        userRef.push().setValue(favFood.getText().toString());
+//        boolean isVegetarian1;
+//        isVegetarian1 = isVegetarian.isChecked();
+//        String isVegetarian2 = String.valueOf(isVegetarian1);
+//        userRef.push().setValue(isVegetarian2);
+//        boolean hasReducedLunch50;
+//        hasReducedLunch50 = reducedLunch50.isChecked();
+//        String doesHaveReducedLunch50 = String.valueOf(hasReducedLunch50);
+//        userRef.push().setValue(doesHaveReducedLunch50);
+//
+//        boolean hasReducedLunch100;
+//        hasReducedLunch100 = reducedLunch100.isChecked();
+//        String doesHaveReducedLunch100 = String.valueOf(hasReducedLunch100);
+//        userRef.push().setValue(doesHaveReducedLunch100);
 
         Intent intentCreateNewAccount = new Intent(this, StudentProfileActivity.class);
         startActivity(intentCreateNewAccount);
