@@ -34,6 +34,8 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
         mealVegetarianView = (TextView) itemView.findViewById(R.id.is_vegetarian);
         mealPhotoView = (ImageView) itemView.findViewById(R.id.meal_photo);
         mealCheckbox = (CheckBox) itemView.findViewById(R.id.meal_checkbox);
+
+        mealCheckbox.setVisibility(View.GONE);
         this.context = context;
     }
 

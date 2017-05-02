@@ -127,7 +127,7 @@ public class MealOptions extends AppCompatActivity {
 
 
         Intent intentPreviewMenu = new Intent(MealOptions.this, StudentMenu.class);
-        intentPreviewMenu.putExtra("selectedMeals", selectedMeals);
+        intentPreviewMenu.putExtra(Keys.SELECTED_MEALS, selectedMeals);
         startActivity(intentPreviewMenu);
     }
 }

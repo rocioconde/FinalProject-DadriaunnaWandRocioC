@@ -70,4 +70,12 @@ public class Meal implements Serializable {
     public void setPhotoId(int photoId) {
         this.photoId = photoId;
     }
+
+    @Override
+    public String toString() {
+        return description + "\n"
+                + "$" + price + "\n" +
+                calories + "cal." +
+                "Vegetarian= " + isVegetarian + "\n";
+    }
 }

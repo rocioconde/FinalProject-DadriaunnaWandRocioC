@@ -86,7 +86,7 @@ public class AddNewPost extends AppCompatActivity {
         String postPhoto1 = String.valueOf(postPhoto);
         int postPhoto2 = Integer.parseInt(postPhoto1);
 
-        Post post = new Post(postPhoto2, postText);
+        Post post = new Post(R.drawable.cheespizza, postText);
         Intent intent = new Intent(this, StudentProfileActivity.class);
         intent.getSerializableExtra(Keys.POST);
         startActivity(intent);

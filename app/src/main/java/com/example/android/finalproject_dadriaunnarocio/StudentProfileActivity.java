@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class StudentProfileActivity extends AppCompatActivity {
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -32,6 +34,7 @@ public class StudentProfileActivity extends AppCompatActivity {
     private TextView studentSchool;
     private TextView studentFavFood;
     private TextView isVegetarian;
+    private ArrayList<Post> studentPosts;
 
 
     //new information added
@@ -39,6 +42,10 @@ public class StudentProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
+
+        Intent intent = getIntent();
+        studentPosts = (ArrayList<Post>) intent.getSerializableExtra(Keys.POST);
+
 
         studentPhoto = (ImageView) findViewById(R.id.student_photo);
         studentName = (TextView) findViewById(R.id.student_name);
@@ -85,18 +92,6 @@ public class StudentProfileActivity extends AppCompatActivity {
 
             }
         });
-
-
-//        Student student = new Student("Rocio Conde", 12, 17, "arepas", "TC", R.drawable.girl, false);
-//        Intent intent = new Intent();
-//        intent.getSerializableExtra(Keys.STUDENT);
-//        studentPhoto.setImageResource(student.photoId);
-//        studentName.setText(student.fullName);
-//        studentAge.setText(String.valueOf(student.age + " years old "));
-//        studentGrade.setText(String.valueOf("/Grade " + student.grade));
-//        studentSchool.setText(student.school);
-//        studentFavFood.setText("Favorite food: " + student.favFood);
-//        isVegetarian.setText(String.valueOf("Vegetarian: " + student.isVegetarian));
 
 
         authListener = new FirebaseAuth.AuthStateListener() {
