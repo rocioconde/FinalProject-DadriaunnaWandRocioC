@@ -61,7 +61,7 @@ public class Student implements Serializable {
     }
 
     public String getSchool() {
-        return school + " school";
+        return school;
     }
 
     public void setSchool(String school) {
