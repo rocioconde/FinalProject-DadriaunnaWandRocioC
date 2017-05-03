@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,19 +13,19 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class StudentProfileActivity extends AppCompatActivity {
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference studentRef = database.getReference("student");
     private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid() + "/profile");
     private FirebaseAuth.AuthStateListener authListener;
 
     private ImageView studentPhoto;
@@ -35,6 +36,8 @@ public class StudentProfileActivity extends AppCompatActivity {
     private TextView studentFavFood;
     private TextView isVegetarian;
     private ArrayList<Post> studentPosts;
+    private RecyclerView studentProfileRecyclerView;
+
 
 
     //new information added
@@ -55,9 +58,9 @@ public class StudentProfileActivity extends AppCompatActivity {
         studentFavFood = (TextView) findViewById(R.id.fav_food);
         isVegetarian = (TextView) findViewById(R.id.is_vegetarian);
 
-        studentRef.addChildEventListener(new ChildEventListener() {
+        studentRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 Student student = dataSnapshot.getValue(Student.class);
                 studentName.setText(student.getFullName());
                 studentAge.setText(String.valueOf(student.getAge()) + " years old/ ");
@@ -69,21 +72,6 @@ public class StudentProfileActivity extends AppCompatActivity {
                 } else {
                     isVegetarian.setText("Vegetarian: false");
                 }
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
             }
 

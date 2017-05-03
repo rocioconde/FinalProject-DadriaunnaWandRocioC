@@ -46,11 +46,11 @@ public class MealOptions extends AppCompatActivity {
 
                 if (student.isVegetarian()) {
                     getVeggieMeals();
-                    mealAdapter = new MealsAdapter(veggieMeals, MealOptions.this);
+                    mealAdapter = new MealsAdapter(veggieMeals, MealOptions.this, true);
 
                 } else {
 
-                    mealAdapter = new MealsAdapter(meals, MealOptions.this);
+                    mealAdapter = new MealsAdapter(meals, MealOptions.this, true);
                 }
                 recyclerView.setAdapter(mealAdapter);
             }

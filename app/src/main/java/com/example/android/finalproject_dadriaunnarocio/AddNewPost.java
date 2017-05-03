@@ -3,6 +3,7 @@ package com.example.android.finalproject_dadriaunnarocio;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -79,16 +80,14 @@ public class AddNewPost extends AppCompatActivity {
 
     public void addPostToProfile(View view) {
 
-        postPhoto = (ImageView) findViewById(R.id.post_photo);
-        postDescription = (EditText) findViewById(R.id.post_description);
 
-        String postText = String.valueOf(postDescription);
-        String postPhoto1 = String.valueOf(postPhoto);
-        int postPhoto2 = Integer.parseInt(postPhoto1);
+        String postText = postDescription.getText().toString();
+        String postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
 
-        Post post = new Post(R.drawable.cheespizza, postText);
+
+        Post post = new Post(postPhotoStr, postText);
         Intent intent = new Intent(this, StudentProfileActivity.class);
-        intent.getSerializableExtra(Keys.POST);
+        intent.putExtra(Keys.POST, post);
         startActivity(intent);
 
     }

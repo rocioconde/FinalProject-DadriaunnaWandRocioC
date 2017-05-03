@@ -8,11 +8,11 @@ import java.io.Serializable;
 
 public class Post implements Serializable {
 
-    public int postPhotoID;
+    public String postPhotoStr;
     public String postDescription;
 
-    public Post(int postPhotoID, String postDescription) {
-        this.postPhotoID = postPhotoID;
+    public Post(String postPhotoStr, String postDescription) {
+        this.postPhotoStr = postPhotoStr;
         this.postDescription = postDescription;
     }
 
@@ -20,12 +20,12 @@ public class Post implements Serializable {
 
     }
 
-    public int getPostPhotoID() {
-        return postPhotoID;
+    public String getPostPhotoStr() {
+        return postPhotoStr;
     }
 
-    public void setPostPhotoID(int postPhotoID) {
-        this.postPhotoID = postPhotoID;
+    public void setPostPhotoID(String postPhotoStr) {
+        this.postPhotoStr = postPhotoStr;
     }
 
     public String getPostDescription() {

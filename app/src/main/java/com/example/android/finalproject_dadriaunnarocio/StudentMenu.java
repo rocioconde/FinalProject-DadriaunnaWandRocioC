@@ -26,7 +26,7 @@ public class StudentMenu extends AppCompatActivity {
         studentMenuRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_student_menu);
         studentMenuRecyclerView.setHasFixedSize(true);
         studentMenuRecyclerView.setLayoutManager(new LinearLayoutManager(StudentMenu.this));
-        mealsAdapterForStudentMenu = new MealsAdapter(selectedMeals, StudentMenu.this);
+        mealsAdapterForStudentMenu = new MealsAdapter(selectedMeals, StudentMenu.this, false);
         studentMenuRecyclerView.setAdapter(mealsAdapterForStudentMenu);
 
 

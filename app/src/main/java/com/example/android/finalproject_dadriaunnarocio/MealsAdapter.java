@@ -16,16 +16,18 @@ public class MealsAdapter extends RecyclerView.Adapter<MealViewHolder> {
 
     private List<Meal> meals;
     private Context context;
+    private boolean showCheckBox;
 
-    public MealsAdapter(List<Meal> meals, Context context) {
+    public MealsAdapter(List<Meal> meals, Context context, boolean showCheckBox) {
         this.meals = meals;
         this.context = context;
+        this.showCheckBox = showCheckBox;
     }
 
     @Override
     public MealViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_meal, parent, false);
-        return new MealViewHolder(view, context);
+        return new MealViewHolder(view, context, showCheckBox);
     }
 
     @Override

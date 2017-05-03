@@ -30,7 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
     private CheckBox reducedLunch50;
     private CheckBox reducedLunch100;
     private ArrayList<Student> student = new ArrayList<>();
-    private DatabaseReference studentRef = database.getReference("student");
+    private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid());
 
 
 
@@ -84,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StudentProfileActivity.class);
         startActivity(intent);
 
-        studentRef.push().setValue(new Student(studentFullName, studentGrade2, studentAge2, favFood1, studentSchool1, R.drawable.girl, isVegetarian1));
+        studentRef.child("profile").setValue(new Student(studentFullName, studentGrade2, studentAge2, favFood1, studentSchool1, R.drawable.girl, isVegetarian1));
 //        userRef.push().setValue(studentName.getText().toString());
 //        userRef.push().setValue(studentGrade.getText().toString());
 //        userRef.push().setValue(studentAge.getText().toString());

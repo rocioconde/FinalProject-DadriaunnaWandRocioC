@@ -25,7 +25,7 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
     private CheckBox mealCheckbox;
     private Context context;
 
-    public MealViewHolder(View itemView, Context context) {
+    public MealViewHolder(View itemView, Context context, boolean showCheckBox) {
         super(itemView);
         cardView = (CardView) itemView.findViewById(R.id.card_view_meal);
         mealDescriptionView = (TextView) itemView.findViewById(R.id.meal_description);
@@ -34,8 +34,12 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
         mealVegetarianView = (TextView) itemView.findViewById(R.id.is_vegetarian);
         mealPhotoView = (ImageView) itemView.findViewById(R.id.meal_photo);
         mealCheckbox = (CheckBox) itemView.findViewById(R.id.meal_checkbox);
+        if (showCheckBox) {
+            mealCheckbox.setVisibility(View.VISIBLE);
+        } else {
+            mealCheckbox.setVisibility(View.GONE);
+        }
 
-//        mealCheckbox.setVisibility(View.GONE);
         this.context = context;
     }
 
