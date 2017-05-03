@@ -14,13 +14,14 @@ public class StudentMenu extends AppCompatActivity {
 
     private RecyclerView studentMenuRecyclerView;
     private MealsAdapter mealsAdapterForStudentMenu;
+    private ArrayList<Meal> selectedMeals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_menu);
 
-        ArrayList<Meal> selectedMeals = (ArrayList<Meal>) getIntent().getSerializableExtra(Keys.SELECTED_MEALS);
+        selectedMeals = (ArrayList<Meal>) getIntent().getSerializableExtra(Keys.SELECTED_MEALS);
 
         studentMenuRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_student_menu);
         studentMenuRecyclerView.setHasFixedSize(true);
@@ -33,11 +34,19 @@ public class StudentMenu extends AppCompatActivity {
 
     public void confirmMenu(View view) {
 
+        String mealString = "";
+
+        for (Meal studentSelection : selectedMeals) {
+            mealString += studentSelection.toString() + "\n";
+        }
+
+
+
         Intent intent = new Intent(Intent.ACTION_SENDTO);
 
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_SUBJECT, "Your SchoolMenu");
-        intent.putExtra(Intent.EXTRA_TEXT, "This is your menu:");
+        intent.putExtra(Intent.EXTRA_TEXT, "This is your menu:" + "\n" + mealString);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);

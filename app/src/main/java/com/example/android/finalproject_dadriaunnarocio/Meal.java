@@ -75,7 +75,7 @@ public class Meal implements Serializable {
     public String toString() {
         return description + "\n"
                 + "$" + price + "\n" +
-                calories + "cal." +
+                calories + " cal." + "\n" +
                 "Vegetarian= " + isVegetarian + "\n";
     }
 }
