@@ -8,12 +8,20 @@ import java.io.Serializable;
 
 public class Post implements Serializable {
 
+    public String id;
     public String postPhotoStr;
     public String postDescription;
+
 
     public Post(String postPhotoStr, String postDescription) {
         this.postPhotoStr = postPhotoStr;
         this.postDescription = postDescription;
+    }
+
+    public Post(String id, String postPhotoStr, String postDescription) {
+        this.postPhotoStr = postPhotoStr;
+        this.postDescription = postDescription;
+        this.id = id;
     }
 
     public Post() {

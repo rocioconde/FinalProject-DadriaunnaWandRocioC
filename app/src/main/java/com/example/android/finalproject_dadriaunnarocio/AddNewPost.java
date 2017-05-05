@@ -28,6 +28,7 @@ public class AddNewPost extends AppCompatActivity {
     private EditText postDescription;
     private static final int REQUEST_PICK_PHOTO = 111;
     private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid());
+    private DatabaseReference postRef = database.getReference(auth.getCurrentUser().getUid() + "/post");
     private Post post;
 
 
@@ -49,7 +50,37 @@ public class AddNewPost extends AppCompatActivity {
 
 
     //add the save and delete functions
-
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case R.id.menu_item_save:
+//                if (post == null) {
+//                    String id = UUID.randomUUID().toString();
+//                    Random random = new Random();
+//                    String postDescription1 = postDescription.getText().toString();
+//                    String postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
+//
+//                    postRef.child(id).setValue(new Post(id, postDescription1, postPhotoStr));
+//                } else {
+//                    savePost();
+//                }
+//
+//                Intent intent = new Intent(this, StudentProfileActivity.class);
+//                startActivity(intent);
+//                return true;
+//            case R.id.menu_item_delete:
+//                if (post != null)
+//                    postRef.child(post.id).removeValue();
+//                finish();
+//
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//
+//
+//        }
+//    }
 
 
 
@@ -116,4 +147,11 @@ public class AddNewPost extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+//    public void savePost() {
+//
+//        post.postDescription = postDescription.getText().toString();
+//        post.postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
+//       postRef.child(post.id).setValue(school);
+//    }
 }
