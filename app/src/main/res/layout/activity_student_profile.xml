@@ -8,9 +8,9 @@
     tools:context="com.example.android.finalproject_dadriaunnarocio.StudentProfileActivity">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cv">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -24,70 +24,76 @@
                 android:layout_alignParentTop="true" />
 
             <ImageView
+                android:id="@+id/student_photo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/student_photo"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="16dp"
                 android:src="@drawable/girl" />
 
             <TextView
+                android:id="@+id/student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/student_name"
-                android:layout_toRightOf="@+id/student_photo"
                 android:layout_alignParentTop="true"
-                android:textSize="24sp"
+                android:layout_toRightOf="@+id/student_photo"
                 android:text="Dadriaunna Williams"
+                android:textColor="#000000"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/age_grade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/student_photo"
                 android:layout_below="@+id/student_name"
+                android:layout_toRightOf="@+id/student_photo"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/student_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/student_age"
-                    android:text="15 years old/" />
+                    android:text="15 years old/"
+                    android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/student_grade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/student_grade"
-                    android:text="10th grade" />
+                    android:text="10th grade"
+                    android:textColor="#000000" />
 
             </LinearLayout>
             />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/school_name"
-                android:layout_toRightOf="@+id/student_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/age_grade"
-                android:text="Excellence Girls School" />
+                android:layout_toRightOf="@+id/student_photo"
+                android:text="Excellence Girls School"
+                android:textColor="#000000" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/fav_food"
-                android:layout_toRightOf="@+id/student_photo"
-                android:layout_below="@+id/school_name"
-                android:text="Favorite food: Sushi and Seafood" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/is_vegetarian"
-                android:text="Is vegetarian? true"
+                android:layout_below="@+id/school_name"
                 android:layout_toRightOf="@+id/student_photo"
-                android:layout_below="@+id/fav_food" />
+                android:text="Favorite food: Sushi and Seafood"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/is_vegetarian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fav_food"
+                android:layout_toRightOf="@+id/student_photo"
+                android:text="Is vegetarian? true"
+                android:textColor="#000000" />
 
         </RelativeLayout>
 
@@ -101,33 +107,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/select_meals"
+            android:layout_weight="1"
             android:onClick="selectMeals"
-            android:layout_weight="1" />
+            android:text="@string/select_meals" />
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/add_new_post"
+            android:layout_weight="1"
             android:onClick="addNewPost"
-            android:layout_weight="1" />
+            android:text="@string/add_new_post" />
 
     </LinearLayout>
 
-    <ScrollView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_posts"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-
-    </ScrollView>
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 
 </LinearLayout>

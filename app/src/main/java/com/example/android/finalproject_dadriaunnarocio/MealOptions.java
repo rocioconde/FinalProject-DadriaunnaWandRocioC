@@ -8,11 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
 
-import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,8 @@ public class MealOptions extends AppCompatActivity {
     private MealsAdapter mealAdapter;
     private CheckBox mealCheckbox;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference studentRef = database.getReference("student");
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid() + "/profile");
     private Student student;
 
     @Override
@@ -32,9 +34,10 @@ public class MealOptions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_options);
 
-        studentRef.addChildEventListener(new ChildEventListener() {
+
+        studentRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 student = dataSnapshot.getValue(Student.class);
 
                 initialData();
@@ -53,20 +56,6 @@ public class MealOptions extends AppCompatActivity {
                     mealAdapter = new MealsAdapter(meals, MealOptions.this, true);
                 }
                 recyclerView.setAdapter(mealAdapter);
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
             }
 
@@ -75,7 +64,6 @@ public class MealOptions extends AppCompatActivity {
 
             }
         });
-
 
 
     }

@@ -15,7 +15,8 @@
         android:paddingBottom="4dp"
         android:text="@string/my_profile"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/username"
@@ -53,19 +54,25 @@
         android:id="@+id/school"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/school_name" />
+        android:hint="@string/school_name"
+        android:layout_marginBottom="8dp" />
 
     <CheckBox
         android:id="@+id/is_vegetarian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/vegetarian" />
+        android:text="@string/vegetarian"
+        android:layout_marginBottom="8dp"
+
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/reduced_lunch"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000" />
 
 
     <CheckBox
@@ -78,7 +85,8 @@
         android:id="@+id/reduced_lunch_100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="100%" />
+        android:text="100%"
+        android:layout_marginBottom="24dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

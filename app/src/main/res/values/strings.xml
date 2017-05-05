@@ -21,6 +21,8 @@
     <string name="write_post">Write post</string>
     <string name="select_meals">Select meals</string>
     <string name="add_new_post">Add new post</string>
+    <string name="take_picture">Take picture</string>
+    <string name="select_image">Select image</string>
 
 
 </resources>

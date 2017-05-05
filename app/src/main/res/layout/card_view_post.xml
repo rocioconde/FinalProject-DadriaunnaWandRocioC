@@ -12,12 +12,14 @@
         android:padding="16dp">
 
         <ImageView
+            android:id="@+id/card_view_post_photo"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             tools:src="@drawable/mashed_sweet_potatoes" />
 
         <TextView
+            android:id="@+id/card_view_post_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Today's mashed sweet potatoes were delicious!"

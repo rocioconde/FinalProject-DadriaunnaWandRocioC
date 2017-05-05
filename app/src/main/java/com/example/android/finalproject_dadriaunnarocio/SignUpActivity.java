@@ -12,8 +12,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
 public class SignUpActivity extends AppCompatActivity {
 
 
@@ -29,7 +27,6 @@ public class SignUpActivity extends AppCompatActivity {
     private CheckBox isVegetarian;
     private CheckBox reducedLunch50;
     private CheckBox reducedLunch100;
-    private ArrayList<Student> student = new ArrayList<>();
     private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid());
 
 
@@ -49,8 +46,6 @@ public class SignUpActivity extends AppCompatActivity {
         reducedLunch100 = (CheckBox) findViewById(R.id.reduced_lunch_100);
 
 
-//
-
 
     }
 
@@ -68,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         FirebaseUser user = auth.getCurrentUser();
 
-//        DatabaseReference studentRef = database.getReference(user.getUid());
+//      DatabaseReference studentRef = database.getReference(user.getUid());
 
         String studentFullName = studentName.getText().toString();
         String studentGrade1 = studentGrade.getText().toString();
@@ -80,9 +75,6 @@ public class SignUpActivity extends AppCompatActivity {
         isVegetarian1 = isVegetarian.isChecked();
         String favFood1 = favFood.getText().toString();
 
-//        Student s = new Student(studentFullName, studentGrade2, studentAge2, favFood1, studentSchool1, R.drawable.girl, isVegetarian1);
-        Intent intent = new Intent(this, StudentProfileActivity.class);
-        startActivity(intent);
 
         studentRef.child("profile").setValue(new Student(studentFullName, studentGrade2, studentAge2, favFood1, studentSchool1, R.drawable.girl, isVegetarian1));
 //        userRef.push().setValue(studentName.getText().toString());

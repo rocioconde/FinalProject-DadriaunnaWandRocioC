@@ -15,6 +15,7 @@ public class Student implements Serializable {
     public int photoId;
     public boolean isVegetarian;
 
+
     public Student(String fullName, int grade, int age, String favFood, String school, int photoId, boolean isVegetarian) {
         this.fullName = fullName;
         this.grade = grade;
@@ -24,6 +25,7 @@ public class Student implements Serializable {
         this.photoId = photoId;
         this.isVegetarian = isVegetarian;
     }
+
 
     public Student() {
     }

@@ -8,18 +8,28 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.FileNotFoundException;
 
 public class AddNewPost extends AppCompatActivity {
 
     private ImageView postPhoto;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
     private EditText postDescription;
     private static final int REQUEST_PICK_PHOTO = 111;
+    private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid());
+    private Post post;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +39,19 @@ public class AddNewPost extends AppCompatActivity {
         postPhoto = (ImageView) findViewById(R.id.post_photo);
         postDescription = (EditText) findViewById(R.id.post_description);
 
-//        Post post = new Post(R.drawable.cheeseburger, "This is so amazing omg!");
-//        Intent intent = new Intent();
-//        intent.getSerializableExtra(Keys.POST);
-//        postPhoto.setImageResource(post.postPhotoID);
-//        postDescription.setText(post.postDescription);
+
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_add_new_post, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    //add the save and delete functions
+
+
+
 
     public void selectImage(View view) {
         Intent intent = new Intent();
@@ -84,14 +101,12 @@ public class AddNewPost extends AppCompatActivity {
         String postText = postDescription.getText().toString();
         String postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
 
+        studentRef.child("post").push().setValue(new Post(postPhotoStr, postText));
 
-        Post post = new Post(postPhotoStr, postText);
         Intent intent = new Intent(this, StudentProfileActivity.class);
-        intent.putExtra(Keys.POST, post);
         startActivity(intent);
 
     }
-
 
     public void takePicture(View view) {
 

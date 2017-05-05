@@ -21,6 +21,8 @@
     <string name="write_post">Escribir publicación</string>
     <string name="select_meals">Seleccionar comidas</string>
     <string name="add_new_post">Agregar nueva publicación</string>
+    <string name="take_picture">Tomar foto</string>
+    <string name="select_image">Seleccionar imagen</string>
 
 
 </resources>

@@ -43,6 +43,7 @@ public class LogInActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(LogInActivity.this, task.getResult().getUser().getEmail() + " LogIn successful",
                                     Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LogInActivity.this, StudentProfileActivity.class));
                             finish();
                         }
 

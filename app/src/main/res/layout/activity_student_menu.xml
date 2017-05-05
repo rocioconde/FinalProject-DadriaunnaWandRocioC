@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:text="@string/my_menu"
         android:textSize="24sp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#000000" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_student_menu"

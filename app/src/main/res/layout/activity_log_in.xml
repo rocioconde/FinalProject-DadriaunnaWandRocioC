@@ -22,7 +22,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="match_parent"
@@ -30,7 +31,8 @@
         android:text="@string/log_in_or_create"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/edit_text_email"

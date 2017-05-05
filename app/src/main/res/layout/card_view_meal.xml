@@ -35,6 +35,7 @@
             android:textSize="20sp"
             tools:text="Baked chicken fingers, white rice, and caesar salad"
             android:textStyle="bold"
+            android:textColor="#000000"
 
             />
 

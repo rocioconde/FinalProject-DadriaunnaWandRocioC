@@ -2,8 +2,8 @@ package com.example.android.finalproject_dadriaunnarocio;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,14 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class StudentProfileActivity extends AppCompatActivity {
 
@@ -27,6 +24,7 @@ public class StudentProfileActivity extends AppCompatActivity {
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     private DatabaseReference studentRef = database.getReference(auth.getCurrentUser().getUid() + "/profile");
     private FirebaseAuth.AuthStateListener authListener;
+    private DatabaseReference postRef = database.getReference(auth.getCurrentUser().getUid() + "/post");
 
     private ImageView studentPhoto;
     private TextView studentName;
@@ -35,19 +33,33 @@ public class StudentProfileActivity extends AppCompatActivity {
     private TextView studentSchool;
     private TextView studentFavFood;
     private TextView isVegetarian;
-    private ArrayList<Post> studentPosts;
-    private RecyclerView studentProfileRecyclerView;
+    private ImageView newPostPhoto;
+    private TextView newPostDescription;
+    private RecyclerView studentPostRecyclerView;
+    private PostAdapter postAdapter;
 
 
 
-    //new information added
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
 
-        Intent intent = getIntent();
-        studentPosts = (ArrayList<Post>) intent.getSerializableExtra(Keys.POST);
+        postRef = database.getReference(auth.getCurrentUser().getUid() + "/post");
+
+
+        studentPostRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_posts);
+        studentPostRecyclerView.setHasFixedSize(true);
+        studentPostRecyclerView.setLayoutManager(new LinearLayoutManager(StudentProfileActivity.this));
+        postAdapter = new PostAdapter(postRef);
+        studentPostRecyclerView.setAdapter(postAdapter);
+
+
+
+
+
+
+
 
 
         studentPhoto = (ImageView) findViewById(R.id.student_photo);
@@ -57,6 +69,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         studentSchool = (TextView) findViewById(R.id.school_name);
         studentFavFood = (TextView) findViewById(R.id.fav_food);
         isVegetarian = (TextView) findViewById(R.id.is_vegetarian);
+
 
         studentRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,27 +95,9 @@ public class StudentProfileActivity extends AppCompatActivity {
         });
 
 
-        authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null)
-                    startActivity(new Intent(StudentProfileActivity.this, LogInActivity.class));
-            }
-        };
+
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        auth.removeAuthStateListener(authListener);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -115,6 +110,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.log_out:
                 auth.signOut();
+                startActivity(new Intent(this, SplashActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -134,6 +130,12 @@ public class StudentProfileActivity extends AppCompatActivity {
 
         Intent intentPosts = new Intent(this, AddNewPost.class);
         startActivity(intentPosts);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        postAdapter.cleanup(); // Stop listening if the activity is destroyed
     }
 
 }

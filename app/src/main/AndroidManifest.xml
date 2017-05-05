@@ -11,16 +11,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".StudentProfileActivity">
+        <activity android:name=".StudentProfileActivity" />
+        <activity android:name=".MealOptions" />
+        <activity android:name=".StudentMenu" />
+        <activity android:name=".AddNewPost" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MealOptions" />
-        <activity android:name=".StudentMenu" />
-        <activity android:name=".AddNewPost"></activity>
     </application>
 
 </manifest>
