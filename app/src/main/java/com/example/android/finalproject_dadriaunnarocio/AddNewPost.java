@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,6 +20,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.FileNotFoundException;
+import java.util.Random;
+import java.util.UUID;
+
+import static com.example.android.finalproject_dadriaunnarocio.R.id.school;
 
 public class AddNewPost extends AppCompatActivity {
 
@@ -50,37 +55,37 @@ public class AddNewPost extends AppCompatActivity {
 
 
     //add the save and delete functions
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//            case R.id.menu_item_save:
-//                if (post == null) {
-//                    String id = UUID.randomUUID().toString();
-//                    Random random = new Random();
-//                    String postDescription1 = postDescription.getText().toString();
-//                    String postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
-//
-//                    postRef.child(id).setValue(new Post(id, postDescription1, postPhotoStr));
-//                } else {
-//                    savePost();
-//                }
-//
-//                Intent intent = new Intent(this, StudentProfileActivity.class);
-//                startActivity(intent);
-//                return true;
-//            case R.id.menu_item_delete:
-//                if (post != null)
-//                    postRef.child(post.id).removeValue();
-//                finish();
-//
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//
-//
-//        }
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_item_save:
+                if (post == null) {
+                    String id = UUID.randomUUID().toString();
+                    Random random = new Random();
+                    String postDescription1 = postDescription.getText().toString();
+                    String postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
+
+                    postRef.child(id).setValue(new Post(id, postDescription1, postPhotoStr));
+                } else {
+                    savePost();
+                }
+
+                Intent intent = new Intent(this, StudentProfileActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.menu_item_delete:
+                if (post != null)
+                    postRef.child(post.id).removeValue();
+                finish();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+
+        }
+    }
 
 
 
@@ -148,10 +153,10 @@ public class AddNewPost extends AppCompatActivity {
         }
     }
 
-//    public void savePost() {
-//
-//        post.postDescription = postDescription.getText().toString();
-//        post.postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
-//       postRef.child(post.id).setValue(school);
-//    }
+    public void savePost() {
+
+        post.postDescription = postDescription.getText().toString();
+        post.postPhotoStr = (ImageUtil.bitmapToByteString(((BitmapDrawable) postPhoto.getDrawable()).getBitmap()));
+        postRef.child(post.id).setValue(school);
+    }
 }
